@@ -22,7 +22,7 @@ def displayOddNums(number):
     return str(numList)
 
 # route for displaying even numbers from 1-N
-# error handling will be added in
+# error handling will be added
 @app.route('/<int:number>/even')
 def displayEvenNums(number):
     numList =[]
@@ -31,7 +31,19 @@ def displayEvenNums(number):
             numList.append(i)
     return str(numList)
 
-
+# route for displaying all prime numbers from 2 - N
+# starting from two because prime numbers are greater than 1
+@app.route('/<int:number>/prime')
+def displayPrimeNums(number):
+    numList =[]
+    for i in range(2, number + 1):
+        for j in range(2, i):
+            if i % j == 0:
+                break
+        else:
+            numList.append(i)
+                
+    return str(numList)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
