@@ -1,14 +1,9 @@
 from flask import Flask
 app = Flask(__name__)
 
-#this route is to test connection, will be deleted
-@app.route('/')
-def hello():
-    return "Hello World!"
 
-
-#route for printing numbers from 1-N
-#error handling needs to be done
+# route for displaying numbers from 1-N
+# error handling needs to be done
 @app.route('/<int:number>')
 def displayNums(number):
     numList = []
@@ -16,7 +11,9 @@ def displayNums(number):
         numList.append(i)
     return str(numList)
 
-
+# route for printing displaying odd numbers from 1-N
+# error handling needs to be done
+# different approach will also be provided
 @app.route('/<int:number>/odd')
 def displayOddNums(number):
     numList =[]
