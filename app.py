@@ -10,12 +10,19 @@ def hello():
 #route for printing numbers from 1-N
 #error handling needs to be done
 @app.route('/<int:number>')
-def showNums(number):
+def displayNums(number):
     numList = []
     for i in range(1, number + 1):
         numList.append(i)
     return str(numList)
 
+
+@app.route('/<int:number>/odd')
+def displayOddNums(number):
+    numList =[]
+    for i in range(1, number + 1, 2):
+        numList.append(i)
+    return str(numList)
 
 
 if __name__ == '__main__':
