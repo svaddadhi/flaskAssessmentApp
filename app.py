@@ -11,7 +11,7 @@ def displayNums(number):
         numList.append(i)
     return str(numList)
 
-# route for printing displaying odd numbers from 1-N
+# route for displaying odd numbers from 1-N
 # error handling needs to be done
 # different approach will also be provided
 @app.route('/<int:number>/odd')
@@ -20,6 +20,17 @@ def displayOddNums(number):
     for i in range(1, number + 1, 2):
         numList.append(i)
     return str(numList)
+
+# route for displaying even numbers from 1-N
+# error handling will be added in
+@app.route('/<int:number>/even')
+def displayEvenNums(number):
+    numList =[]
+    for i in range(1, number + 1):
+        if i % 2 == 0:
+            numList.append(i)
+    return str(numList)
+
 
 
 if __name__ == '__main__':
