@@ -3,7 +3,7 @@ from Compute import ComputeNums
 app = Flask(__name__)
 
 @app.route('/<int:number>/<string:option>')
-def chooseRoute(option):
+def chooseRoute(number, option):
     try:
         if option == None:
             displayNums(number)
@@ -52,7 +52,6 @@ def displayEvenNums(number):
         return jsonify({'ERROR': str(e).upper()}), 500
 
 # route for displaying all prime numbers from 2 - N
-# starting from two because prime numbers are greater than 1
 @app.route('/<int:number>/prime', methods=['GET'])
 def displayPrimeNums(number):
     try:
