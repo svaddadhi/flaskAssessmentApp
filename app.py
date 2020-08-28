@@ -24,6 +24,8 @@ def displayNums(number):
     try:
         if number < 1:
             return jsonify({'ERROR': 'NUMBER MUST BE GREATER THAN OR EQUAL TO 1'}), 400
+        elif isinstance(number, int) == False:
+            return jsonify({'ERROR': 'PLEASE ENTER A VALID INTEGER GREATER THAN OR EQUAL TO 1'}), 400
         result = ComputeNums(number).showNums()
         return jsonify({'SUCCESS': result}), 200
     except Exception as e:
@@ -64,5 +66,3 @@ def displayPrimeNums(number):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
-
-
