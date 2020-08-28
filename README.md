@@ -19,10 +19,10 @@ http://localhost:8080/10/prime
 There is a docker file provided in this repository, after  cloning you can run these commands in the directory:
 
 To build:
-docker build -t <giveNameToContainer> .
+docker build -t "giveNameToContainer" .
 
 To run:
-docker run -p <portNumber>:8080 --name="giveOtherName" <giveNameToContainer>
+docker run -p "portNumber":8080 --name="giveOtherName" "giveNameToContainer"
 
 To stop:
 docker stop "giveOtherName"
